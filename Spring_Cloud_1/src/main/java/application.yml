@@ -1,0 +1,40 @@
+server:
+   port: 8000
+spring:
+   jpa:
+      generate-ddl: false
+      show-sql: true
+      hibernate:
+          ddl-auto: none
+   datasource:                        # 指定数据源
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8
+      username: root
+      password: garyhu
+      driverClassName: com.mysql.jdbc.Driver
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10
+   application:
+      name: Spring_Cloud_1    
+logging: 
+   level:
+      root: INFO
+      org.hibernate: INFO
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+      org.hibernate.type.descriptor.sql.BasicExtractor: TRACE    
+info:
+   app:
+      name: Spring_Cloud_1
+      encoding: UTF-8      
+      java:
+         source: 1.8.0_92
+         target: 1.8.0_92
+eureka:
+   client:
+      serviceUrl:
+         defaultZone: http://localhost:8761/eureka/
+   instance:
+      prefer-ip-address: true               
+         
+                

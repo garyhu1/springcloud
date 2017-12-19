@@ -1,0 +1,18 @@
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false  
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  datasource:                        # 指定数据源
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8
+      username: root
+      password: garyhu
+      driverClassName: com.mysql.jdbc.Driver
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10      
