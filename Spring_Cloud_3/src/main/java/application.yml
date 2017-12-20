@@ -1,9 +1,10 @@
 server:
   port: 8761
-eureka:
+eureka:                        # 配置Eureka Server
   client:
-    registerWithEureka: false  
-    fetchRegistry: false
+    registerWithEureka: false  # 默认为true  表示是否将自己注册到eureka server,本身已经是一个eureka server,所以设置为false
+    fetchRegistry: false       # 默认为true  表示是否从eureka server获取注册信息,因为这是一个单点的eureka server,不需要同步其他的eureka server的节点，所以设为false
+    # 设置与eureka server 交互的地址,查询服务和注册服务都依赖这个地址，多个地址可以用","隔开
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 spring:

@@ -27,7 +27,7 @@
   		<artifactId>spring-boot-starter-web</artifactId>
   	</dependency>
   	
-  	<!-- actuator -->
+  	<!-- 监控端点actuator -->
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-actuator</artifactId>

@@ -15,9 +15,9 @@ spring:
       max-idle: 8
       min-idle: 8
       initial-size: 10
-   application:
+   application:                   # 应用的名称
       name: Spring_Cloud_1    
-logging: 
+logging:                          # 日志
    level:
       root: INFO
       org.hibernate: INFO
@@ -33,8 +33,8 @@ info:
 eureka:
    client:
       serviceUrl:
-         defaultZone: http://localhost:8761/eureka/
+         defaultZone: http://garyhu:123456@localhost:8762/eureka/,http://user:123456@localhost:8761/eureka/
    instance:
-      prefer-ip-address: true               
+      prefer-ip-address: true                              # 表示将自己的IP注册到Eureka Server         
          
                 

@@ -2,7 +2,7 @@ package com.garyhu.util;
 
 public class ResponseUtil {
 
-	public static Result success(Object o,String msg){
+	public static Result success(Object o){
 		return new Result(ResultCode.SUCCESS,o);
 	}
 	
