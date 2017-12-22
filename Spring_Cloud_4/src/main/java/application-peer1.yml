@@ -1,0 +1,27 @@
+spring:
+   application:
+      name: Spring_Cloud_4
+   datasource:
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8
+      username: root
+      password: garyhu
+      driverClassName: com.mysql.jdbc.Driver
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10    
+server: 
+   port: 8761
+eureka:
+   instance:
+      hostname: peer1
+   client:
+      serviceUrl:
+         defaultZone: http://peer2:8762/erueka/   
+security:
+    basic:
+       enabled: true
+    user:
+       name: garyhu
+       password: 123456            
+           

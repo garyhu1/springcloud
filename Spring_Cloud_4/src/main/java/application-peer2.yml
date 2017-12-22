@@ -1,0 +1,26 @@
+spring:
+   application:
+      name: Spring_Cloud_4
+   datasource:
+      url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8
+      username: root
+      password: garyhu
+      driverClassName: com.mysql.jdbc.Driver
+      max-active: 20
+      max-idle: 8
+      min-idle: 8
+      initial-size: 10    
+server: 
+   port: 8762
+eureka:
+   instance:
+      hostname: peer2
+   client:
+      serviceUrl:
+         defaultZone: http://peer1:8761/erueka/             
+security:
+    basic:
+        enabled: true        #  开始基于HTTP basic 的验证
+    user:
+        name: user           #  配置登录的用户为 user
+        password: 123456     #  配置登录的密码为 123456           
