@@ -26,15 +26,16 @@ public class UserController {
 	
 	@GetMapping("/user/{id}")
 	public Result getUser(@PathVariable Long id){
-//		List<ServiceInstance> list = client.getInstances("Spring_Cloud_1");
-//		ServiceInstance instance = list.get(0);
-		User user = this.restTemplate.getForObject("http://127.0.0.1:8000/"+id, User.class);
-		return ResponseUtil.success(user);
+		List<ServiceInstance> list = client.getInstances("Spring_Cloud_1");
+		ServiceInstance instance = list.get(0);
+		Result user = this.restTemplate.getForObject(instance.getUri()+"/"+id, Result.class);
+		return user;
 	}
 	
 	@GetMapping("/")
 	public Result index(){
 		List<ServiceInstance> list = client.getInstances("Spring_Cloud_1");
-		return ResponseUtil.success(list.get(0));
+		return ResponseUtil.success(list);
 	}
+	
 }

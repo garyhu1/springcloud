@@ -17,7 +17,7 @@ eureka:
       hostname: peer2
    client:
       serviceUrl:
-         defaultZone: http://peer1:8761/erueka/             
+         defaultZone: http://garyhu:123456@peer1:8761/erueka/             
 security:
     basic:
         enabled: true        #  开始基于HTTP basic 的验证

@@ -33,8 +33,9 @@ info:
 eureka:
    client:
       serviceUrl:
-         defaultZone: http://garyhu:123456@localhost:8762/eureka/,http://user:123456@localhost:8761/eureka/
+         defaultZone: http://garyhu:123456@peer1:8761/eureka/,http://user:123456@peer2:8762/eureka/
    instance:
-      prefer-ip-address: true                              # 表示将自己的IP注册到Eureka Server         
+      prefer-ip-address: true               
+        
          
                 
