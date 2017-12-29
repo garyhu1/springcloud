@@ -11,7 +11,7 @@ spring:
       min-idle: 8
       initial-size: 10 
    application:
-      name: Spring_Cloud_2 
+      name: springcloud2 
 #将服务注册到Eureka Server上
 eureka:
    client:
@@ -19,4 +19,10 @@ eureka:
          defaultZone: http://garyhu:123456@peer1:8761/eureka/,http://user:123456@peer2:8762/eureka/   
    instance:
       prefer-ip-address: true              
-           
+Spring_Cloud_1:   #  使用属性自定义Ribbon配置
+   ribbon:
+      NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+      # NFLoadBalancerClassName:  配置ILoadBalancer的实现类         
+      # NFLoadBalancerPingClassName: 配置IPing的实现类
+      # NIWSServerListClassName: 配置ServerList的实现类
+      # NIWSServerListFilterClassName: 配置ServerListFilter的实现类

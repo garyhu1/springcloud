@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *
  */
 
-@SpringBootApplication
+@SpringBootApplication    //应用程序的主入口
 @EnableDiscoveryClient    // 声明这是一个Eureka Client
 public class Application {
 

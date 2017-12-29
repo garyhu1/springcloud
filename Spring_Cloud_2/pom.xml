@@ -27,10 +27,34 @@
   		<artifactId>spring-boot-starter-web</artifactId>
   	</dependency>
   	
-  	<!-- Eureka  -->
+  	<!-- actuctor -->
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-actuator</artifactId>
+  	</dependency>
+  	
+  	<!-- 负载均衡Ribbon -->
+  	<!-- <dependency>
+  		<groupId>org.springframework.cloud</groupId>
+  		<artifactId>spring-cloud-starter-ribbon</artifactId>
+  	</dependency> -->
+  	
+  	<!-- Eureka (包含了Ribbon) -->
   	<dependency>
   		<groupId>org.springframework.cloud</groupId>
   		<artifactId>spring-cloud-starter-eureka</artifactId>
+  	</dependency>
+  	
+  	<!-- Feign 实现声明式REST调用 -->
+  	<dependency>
+  		<groupId>org.springframework.cloud</groupId>
+  		<artifactId>spring-cloud-starter-feign</artifactId>
+  	</dependency>
+  	
+  	<!-- hystrix容错 -->
+  	<dependency>
+  		<groupId>org.springframework.cloud</groupId>
+  		<artifactId>spring-cloud-starter-hystrix</artifactId>
   	</dependency>
   	
   	<!-- Spring Data Jpa 的支持 -->

@@ -13,11 +13,18 @@ spring:
 server: 
    port: 8761
 eureka:
+   server:
+      enable-self-preservation: false               # 关闭自我保护机制
    instance:
       hostname: peer1
+      # 服务续约相关的时间控制参数
+      lease-renewal-interval-in-seconds: 30         # 默认为30 定义服务续约任务的时间间隔
+      lease-expiration-duration-in-seconds: 90      # 默认为90 定义服务时效的时间
    client:
       serviceUrl:
-         defaultZone: http://user:123456@peer2:8762/erueka/   
+         defaultZone: http://user:123456@peer2:8762/erueka/ 
+      #  缓存清单的更新时间
+      registry-fetch-interval-seconds: 30            # 默认为30     
 security:
     basic:
        enabled: true

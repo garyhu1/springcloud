@@ -16,7 +16,19 @@ spring:
       min-idle: 8
       initial-size: 10
    application:                   # 应用的名称
-      name: Spring_Cloud_1    
+      name: springcloud1  
+   # cloud:
+      # inetutils:
+          # 忽略指定名称的网卡
+          # ignored-interfaces: 
+            # - docker0
+            # - veth
+          # 使用指定的网络地址
+          # preferredNetworks:
+            # - 192.168
+            # - 10.0 
+          # 只使用站点本地地址
+          # useOnlySiteLocalInterfaces: true                 
 logging:                          # 日志
    level:
       root: INFO
@@ -35,7 +47,14 @@ eureka:
       serviceUrl:
          defaultZone: http://garyhu:123456@peer1:8761/eureka/,http://user:123456@peer2:8762/eureka/
    instance:
-      prefer-ip-address: true               
-        
-         
-                
+      prefer-ip-address: true   
+      # 自定义元数据
+      metadata-map:
+          #  自定义的元数据，key/value都可以自定义
+          my-metadata: 我自定的元数据              
+security:
+   basic:
+      enabled: true
+   user:
+      name: user
+      password: password1                

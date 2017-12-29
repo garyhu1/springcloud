@@ -39,6 +39,12 @@
   		<artifactId>spring-cloud-starter-eureka</artifactId>
   	</dependency>
   	
+  	<!-- Spring Security -->
+  	<dependency>
+  		<groupId>org.springframework.boot</groupId>
+  		<artifactId>spring-boot-starter-security</artifactId>
+  	</dependency>
+  	
   	<!-- Spring Data Jpa 的支持 -->
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
