@@ -40,10 +40,10 @@
   	</dependency>
   	
   	<!-- Spring Security -->
-  	<dependency>
+  	<!-- <dependency>
   		<groupId>org.springframework.boot</groupId>
   		<artifactId>spring-boot-starter-security</artifactId>
-  	</dependency>
+  	</dependency> -->
   	
   	<!-- Spring Data Jpa 的支持 -->
   	<dependency>

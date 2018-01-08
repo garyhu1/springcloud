@@ -26,3 +26,7 @@ Spring_Cloud_1:   #  使用属性自定义Ribbon配置
       # NFLoadBalancerPingClassName: 配置IPing的实现类
       # NIWSServerListClassName: 配置ServerList的实现类
       # NIWSServerListFilterClassName: 配置ServerListFilter的实现类
+feign:
+    hystrix:
+       # 全局禁用Hystrix
+       # enabled: false      

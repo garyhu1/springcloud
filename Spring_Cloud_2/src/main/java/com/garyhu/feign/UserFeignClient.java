@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.garyhu.feign.fallback.FeignClientFallback;
+import com.garyhu.feign.fallback.FeignClientFallbackFactory;
 import com.garyhu.pojo.User;
 import com.garyhu.util.Result;
-import com.myfeign.FooFeignConfiguration;
 import com.myfeign.MyFeignConfiguration;
 
 import feign.Param;
@@ -21,9 +22,14 @@ import feign.RequestLine;
  * 声明式调用
  * configuration默认使用的是FeignClientConfiguration,可以自定义，自定义的优先级高于默认的
  * @author garyhu
- * 这里采用自定义的Feign配置，就可以使用feign自带的注解了
+ * @description 这里采用自定义的Feign配置，就可以使用feign自带的注解了
+ * 
+ * 为feign添加Hystrix
  */
-@FeignClient(value="springcloud1",configuration={MyFeignConfiguration.class})
+@FeignClient(value="springcloud1",configuration=MyFeignConfiguration.class,
+             fallback=FeignClientFallback.class,
+             //可以用来检查回退原因，打印回退日志
+             fallbackFactory=FeignClientFallbackFactory.class)
 public interface UserFeignClient {
     
 	/**
