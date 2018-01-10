@@ -26,8 +26,8 @@ public class UserController {
 	
 	private final static Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
-//	@Autowired
-//	private RestTemplate restTemplate;
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	@Autowired
 	private DiscoveryClient client;
@@ -76,6 +76,12 @@ public class UserController {
 		UserController.LOGGER.info("{}:{}:{}",instance.getServiceId(),instance.getHost(),instance.getPort());
 	}
 	
+	@GetMapping("/test")
+	public String findById(){
+		//将会请求到: http://localhost:8060/,返回结果为： {"index":"欢迎来到首页"}
+		return this.restTemplate.getForObject("http://springcloudzuulsidecar/", String.class);
+	}
+	
 	//执行的回退方法（注意：执行回退方法时，并不意味着断路器已经打开）
 	//请求失败、超时、被拒绝以及断路器被打开都会执行回退方法
 	public Result findByIdFallback(Long id){
@@ -84,5 +90,7 @@ public class UserController {
 		user.setName("默认用户");
 		return ResponseUtil.success(user);
 	}
+	
+	
 	
 }

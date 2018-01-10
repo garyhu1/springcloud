@@ -1,0 +1,55 @@
+server:
+   port: 8044
+spring:
+   application:
+      name: springcloudzuul
+eureka:
+   client:
+      service-url:
+          defaultZone: http://garyhu:123456@localhost:8761/eureka/
+   instance:
+       prefer-ip-address: true
+zuul:
+   # 添加路由前缀
+   #prefix: /api
+   #strip-prefix: false
+   # 为全局设置敏感Header
+   sensitive-headers: Cookie,Set-Cookie,Authorization
+   # 忽略Header
+   # ignored-headers: 
+   # 忽略微服务的访问路径    
+   ignored-services: springcloud1,springcloudstream    # 如果设置为"*"时，为忽略所有的微服务
+   ignoredPatterns: /**/admin/**                       # 忽略所有包含/admin/的路径
+   routes:              # 指定微服务的访问路径
+       springcloud2: 
+           path: /user/**
+           strip-prefix: false
+       springcloudfileupload:
+           path: /**
+           strip-prefix: false    
+       
+#  关于zuul的配置
+#  routes:
+#     user-route:                       # 该配置方式中，user-route只是一个名称，可以随意命名
+#        url: http://localhost:8000/    # 指定url
+#        path: /user/**                 # url对应的路径
+# 这种配置方式配置的路由不会作为HystrixCommand执行，同时也不能使用Ribbon来负载均衡多个URL
+#
+# zuul:
+#   routes:
+#      user-route:    
+#         path: /user/**
+#         sensitive-headers: Cookie,Set-Cookie,Authorization    # 此处设置会覆盖全局的敏感Header设置
+#         service-id: springcloud2
+# ribbon:  
+#    eureka:
+#       enabled: false                   # 为Ribbon禁用Eureka
+# springcloud2:
+#    ribbon:
+#        listOfServers: localhost:8000,localhost:8001
+# 这样就可以既指定path与url，又不破坏Zuul的Ribbon特性
+
+# 禁用过滤器的配置
+# zuul.<FilterClassName>.<filterType>.disable=true
+# 例如： zuul.SendResponseFilter.post.disabled=true或者
+#  zuul.PreRequestLogFilter.pre.disabled=true

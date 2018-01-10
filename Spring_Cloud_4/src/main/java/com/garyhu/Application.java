@@ -3,7 +3,11 @@ package com.garyhu;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
-
+/**
+ * 一个高可用的服务注册中心
+ * @author garyhu
+ *
+ */
 @SpringBootApplication
 @EnableEurekaServer
 public class Application {

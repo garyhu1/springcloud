@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * 只要Hystrix在项目的classpath中，Feign就会使用断路器包裹Feign客户端的所有方法。
  * @author garyhu
- *
+ * 服务消费者，使用Spring_Cloud_1的服务
  */
 @SpringBootApplication
 @EnableDiscoveryClient

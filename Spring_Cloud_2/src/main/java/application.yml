@@ -11,7 +11,7 @@ spring:
       min-idle: 8
       initial-size: 10 
    application:
-      name: springcloud2 
+      name: springcloud2
 #将服务注册到Eureka Server上
 eureka:
    client:
