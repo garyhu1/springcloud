@@ -33,6 +33,7 @@ logging:                          # 日志
    level:
       root: INFO
       org.hibernate: INFO
+      org.springframework.web.servlet.DispatcherServlet: DEBUG
       org.hibernate.type.descriptor.sql.BasicBinder: TRACE
       org.hibernate.type.descriptor.sql.BasicExtractor: TRACE    
 info:
@@ -51,4 +52,5 @@ eureka:
       # 自定义元数据
       metadata-map:
           #  自定义的元数据，key/value都可以自定义
-          my-metadata: 我自定的元数据                              
+          my-metadata: 我自定的元数据         
+                               

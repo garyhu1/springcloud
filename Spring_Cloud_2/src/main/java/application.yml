@@ -29,4 +29,9 @@ Spring_Cloud_1:   #  使用属性自定义Ribbon配置
 feign:
     hystrix:
        # 全局禁用Hystrix
-       # enabled: false      
+       # enabled: false 
+logging:                          # 日志
+   level:
+      root: INFO
+      org.hibernate: INFO
+      org.springframework.web.servlet.DispatcherServlet: DEBUG            
