@@ -1,0 +1,35 @@
+server: 
+   port: 8070
+spring:
+   application:
+      name: springcloudconfigserver
+   cloud:
+      config:
+         server:
+            git: 
+               # 配置Git仓库的地址
+               uri: https://gitee.com/garyhu1/spring-cloud-config-repo.git
+               # Git仓库的账号
+               username: garyhu1
+               # Git 仓库的密码
+               password: lyyahww09081020
+            health:
+               repositories:
+                  a-foo:
+                     label: config-label-v2.0
+                     name: microservice-foo
+                     profiles: production 
+eureka:
+   client:
+       serviceUrl:
+          defaultZone: http://garyhu:123456@localhost:8761/eureka/
+   instance:
+       prefer-ip-address: true   
+security:
+   basic:
+      enabled: true               #  开启基于HTTP Basic 的认证
+   user:
+       name: user                 #  配置登录账号为user
+       password: 111111           #  配置登录密码为111111                                   
+encrypt: 
+    key: foo       # 设置对称密钥                          
