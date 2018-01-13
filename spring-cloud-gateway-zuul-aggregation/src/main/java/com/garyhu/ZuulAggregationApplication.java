@@ -7,6 +7,11 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * 使用Zuul聚合微服务
+ * @author garyhu
+ * 只需要发一个请求给zuul，由zuul请求用户微服务以及电影微服务，并组织好数据发送出去
+ */
 @SpringBootApplication
 @EnableZuulProxy
 public class ZuulAggregationApplication {
