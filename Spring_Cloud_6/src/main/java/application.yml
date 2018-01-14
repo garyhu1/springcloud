@@ -2,13 +2,15 @@ server:
    port: 8040
 spring:
    application:
-      name:springcloud6
+      name: springcloudturbine
 eureka:
    client:
       service-url:
          defaultZone: http://garyhu:123456@localhost:8761/eureka/         
-      instance:
-         prefer-ip-address: true   
+   instance:
+       prefer-ip-address: true   
+       appname: springcloudturbine
 turbine:
     appConfig:  springcloud2,springcloudstream
-    clusterNameExpression: "'default'"        
+    clusterNameExpression: "'default'"   
+    combine-host-port: true     #  默认值是true   
